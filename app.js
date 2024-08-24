@@ -13,7 +13,11 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(
+  cors({
+    origin: "https://notes-app-fe-chi.vercel.app", // Replace with your front-end URL
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("hello");
